@@ -538,5 +538,5 @@ def main(args=None):
 
 if __name__ == '__main__':
     model=main()
-    filename = 'finalized_model.sav'
+    filename = 'finalized_model.h5'
     pickle.dump(model, open(filename, 'wb'))
