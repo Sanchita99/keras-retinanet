@@ -522,7 +522,7 @@ def main(args=None):
         validation_generator = None
 
     # start training
-    return training_model.fit_generator(
+    history=training_model.fit_generator(
         generator=train_generator,
         steps_per_epoch=args.steps,
         epochs=args.epochs,
@@ -534,9 +534,10 @@ def main(args=None):
         validation_data=validation_generator,
         initial_epoch=args.initial_epoch
     )
-
+    return history
 
 if __name__ == '__main__':
     model=main()
-    filename = 'finalized_model.h5'
+    print(type(model))
+    filename = 'finalized_model.pkl'
     pickle.dump(model, open(filename, 'wb'))
