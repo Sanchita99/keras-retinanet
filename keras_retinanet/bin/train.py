@@ -538,6 +538,6 @@ def main(args=None):
 
 if __name__ == '__main__':
     model=main()
-    print(type(model))
+    print(type(model.history))
     filename = 'finalized_model.pkl'
-    pickle.dump(model, open(filename, 'wb'))
+    pickle.dump(model.history, open(filename, 'wb'))
