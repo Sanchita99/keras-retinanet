@@ -24,6 +24,7 @@ import warnings
 import keras
 import keras.preprocessing.image
 import tensorflow as tf
+import pickle
 
 # Allow relative imports when being executed as script.
 if __name__ == "__main__" and __package__ is None:
@@ -536,4 +537,6 @@ def main(args=None):
 
 
 if __name__ == '__main__':
-    main()
+    model=main()
+    filename = 'finalized_model.sav'
+    pickle.dump(model, open(filename, 'wb'))
